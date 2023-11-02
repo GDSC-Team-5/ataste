@@ -8,6 +8,7 @@ jwt:
 
 kakao:
   id: 748f5ec6acf376dbecc444759629df2c
+  url: https://dapi.kakao.com/v2/local/search/keyword
 
 
 spring:
