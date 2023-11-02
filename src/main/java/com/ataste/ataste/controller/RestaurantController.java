@@ -34,6 +34,7 @@ public class RestaurantController {
         return restaurantRepository.findAll();
     }
 
+
     @GetMapping("/restaurants/{category}") // 카테고리 별 레스토랑 가져오기
     public List<Restaurants> getRestaurantsByCategory(@PathVariable String category) {
         return restaurantRepository.findByCategory(category);
