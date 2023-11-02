@@ -7,8 +7,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 
 @Service
 public class KakaoApiService {
@@ -22,39 +20,20 @@ public class KakaoApiService {
         this.restTemplate = restTemplate;
     }
 
-    public String getAllResultsFromKakao(String[] queries) {
-        String apiUrl = "https://dapi.kakao.com/v2/local/search/keyword.json";
-        int page = 1;
-        int size = 15;
-        StringBuilder resultBuilder = new StringBuilder();
+    public String getRestaurantsFromKakao() {
+        String apiUrl = "https://dapi.kakao.com/v2/local/search/keyword.json?query=음식점";
 
-        for (String query : queries) {
-            page = 1;
-            while (true) {
-                HttpHeaders headers = new HttpHeaders();
-                headers.set("Authorization", "KakaoAK " + kakaoApiKey);
+        // 헤더에 API 키 추가
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "KakaoAK " + kakaoApiKey);
 
-                MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-                params.add("query", query);
-                params.add("page", String.valueOf(page));
-                params.add("size", String.valueOf(size));
+        // HTTP 요청 엔터티 생성
+        HttpEntity<String> entity = new HttpEntity<>(headers);
 
-                HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(params, headers);
+        // 카카오 API 호출
+        ResponseEntity<String> response = restTemplate.exchange(apiUrl, HttpMethod.GET, entity, String.class);
+        String result = response.getBody();
 
-                ResponseEntity<String> response = restTemplate.exchange(apiUrl, HttpMethod.GET, entity, String.class);
-                String responseJson = response.getBody();
-
-                resultBuilder.append(responseJson);
-
-                page++;
-
-                // 카카오 API의 페이지 수 제한에 도달하면 종료
-                if (page > 45) {
-                    break;
-                }
-            }
-        }
-
-        return resultBuilder.toString();
+        return result;
     }
 }

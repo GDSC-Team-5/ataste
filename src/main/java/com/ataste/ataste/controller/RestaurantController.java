@@ -24,9 +24,9 @@ public class RestaurantController {
 
     @GetMapping("/restaurants") // 외부 데이터
     public String getAllResultsFromKakao() {
-        // 빈 문자열 배열을 전달하여 모든 결과를 가져오도록 함
+
         String[] queries = new String[] { "" };
-        return kakaoApiService.getAllResultsFromKakao(queries);
+        return kakaoApiService.getRestaurantsFromKakao();
     }
 
     @GetMapping("/restaurants/all") // 내부 데이터 - 모든 레스토랑 가져오기
