@@ -10,4 +10,6 @@ public class AtatseApplication {
 		SpringApplication.run(AtatseApplication.class, args);
 	}
 
+
+
 }
