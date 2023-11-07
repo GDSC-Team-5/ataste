@@ -128,5 +128,6 @@ public class MemberController {
                 .nickname(member.getName())
                 .build();
         return new ResponseEntity(loginResponse, HttpStatus.OK);
+
     }
 }
