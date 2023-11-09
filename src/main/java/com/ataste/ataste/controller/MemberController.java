@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -67,6 +68,14 @@ public class MemberController {
         if(!passwordEncoder.matches(loginDto.getPassword(), member.getPassword())){
             return new ResponseEntity(HttpStatus.UNAUTHORIZED);
         }
+
+        // memberId에 할당된 리프레쉬토큰이 있다면 삭제한다.
+        refreshTokenService.findByMemberId(member.getMemberId())
+                .ifPresent(refreshToken -> refreshTokenService.deleteRefreshTokenByMemberId(member.getMemberId()));
+
+
+
+
         // List<Role> ===> List<String>
         List<String> roles = member.getRoles().stream().map(Role::getName).collect(Collectors.toList());
 
@@ -89,11 +98,13 @@ public class MemberController {
         return new ResponseEntity(loginResponse, HttpStatus.OK);
     }
 
+    // 코드 수정이 필요하다. 이렇게 로그아웃이 이렇게 간단하지 않다.
     @DeleteMapping("/logout")
     public ResponseEntity logout(@RequestBody RefreshTokenDto refreshTokenDto) {
         refreshTokenService.deleteRefreshToken(refreshTokenDto.getRefreshToken());
         return new ResponseEntity(HttpStatus.OK);
     }
+
 
     /*
     1. 전달받은 유저의 아이디로 유저가 존재하는지 확인한다.
