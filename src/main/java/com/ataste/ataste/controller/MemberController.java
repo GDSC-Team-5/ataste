@@ -33,12 +33,6 @@ public class MemberController {
     private final RefreshTokenService refreshTokenService;
     private final PasswordEncoder passwordEncoder;
 
-//    public MemberController(JwtTokenizer jwtTokenizer, MemberService memberService, RefreshTokenService refreshTokenService, PasswordEncoder passwordEncoder) {
-//        this.jwtTokenizer = jwtTokenizer;
-//        this.memberService = memberService;
-//        this.refreshTokenService = refreshTokenService;
-//        this.passwordEncoder = passwordEncoder;
-//    }
 
     @PostMapping("/signup")
     public ResponseEntity signup(@RequestBody @Valid MemberSignupDto memberSignupDto, BindingResult bindingResult) {
