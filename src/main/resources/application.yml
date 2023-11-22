@@ -13,7 +13,7 @@ kakao:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://semtle.catholic.ac.kr:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
     username: mango
     password: my-secret-pw
   jpa:
