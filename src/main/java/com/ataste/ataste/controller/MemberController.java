@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Validated
 @RequestMapping("/members")
-@CrossOrigin(origins = "http://semtle.catholic.ac.kr:8082")
+@CrossOrigin(origins = "http://104.198.104.70:8082")
 public class MemberController {
 
     private final JwtTokenizer jwtTokenizer;
