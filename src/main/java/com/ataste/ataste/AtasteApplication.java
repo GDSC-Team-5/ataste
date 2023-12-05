@@ -9,7 +9,6 @@ public class AtasteApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AtasteApplication.class, args);
 	}
-
-
-
 }
+
+// test
