@@ -27,5 +27,16 @@ public class RefreshTokenService {
     public Optional<RefreshToken> findRefreshToken(String refreshToken) {
         return refreshTokenRepository.findByValue(refreshToken);
     }
+
+    @Transactional
+    public void deleteRefreshTokenByMemberId(Long memberId) {
+        refreshTokenRepository.findByMemberId(memberId).ifPresent(refreshToken -> refreshTokenRepository.delete(refreshToken));
+    }
+
+    public Optional<RefreshToken> findByMemberId(Long memberId) {
+        return refreshTokenRepository.findByMemberId(memberId);
+    }
+
+
 }
 
