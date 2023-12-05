@@ -10,3 +10,5 @@ public class AtasteApplication {
 		SpringApplication.run(AtasteApplication.class, args);
 	}
 }
+
+// test

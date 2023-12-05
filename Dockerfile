@@ -7,3 +7,5 @@ COPY ${JAR_FILE} ataste.jar
 ENTRYPOINT ["java","-jar","/ataste.jar"]
 
 
+
+
