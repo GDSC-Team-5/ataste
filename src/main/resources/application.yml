@@ -13,7 +13,7 @@ kakao:
 
 spring:
   datasource:
-    url: jdbc:mysql://104.198.104.70:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://taste.suitestudy.com:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
     username: mango
     password: my-secret-pw
   jpa:
@@ -47,4 +47,4 @@ logging: # S3 에러 발생한거 지우기 위해
           EC2MetadataUtils: ERROR
 
 # jdbc:mysql://127.0.0.1:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
-# jdbc:mysql://semtle.catholic.ac.kr:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
+# jdbc:mysql://taste.suitestudy.com:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
