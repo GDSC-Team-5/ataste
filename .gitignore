@@ -18,6 +18,8 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
+applicaion-aws.yml
+
 .idea
 *.iws
 *.iml

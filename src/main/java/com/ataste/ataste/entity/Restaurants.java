@@ -1,16 +1,24 @@
 package com.ataste.ataste.entity;
 
-
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-
+@Entity
+@Table(name = "restaurants")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Restaurants {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "restaurant_id")
+    private Long id;
+
+    @Column
+    private Long uid; // 매장 고유 번호 => 카카오 API에서 받아온다.
 }

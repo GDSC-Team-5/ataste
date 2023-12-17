@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/search")
+@CrossOrigin(origins = "http://104.198.104.70:8082",allowedHeaders = "*")
 public class SearchController {
     @Value("${kakao.url}")
     private String kakaoApiUrl;
