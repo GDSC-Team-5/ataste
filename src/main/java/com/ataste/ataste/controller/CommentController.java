@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
 
-@CrossOrigin(origins = "taste.suitestudy.com:8082",allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
 @RestController
 @RequestMapping("/restaurants") //  몇번째 쓰여진 comment인지도 알아야하니 마지막에 {comment_id} => 레스토랑 페이지가 생성되고 변경
 public class CommentController {

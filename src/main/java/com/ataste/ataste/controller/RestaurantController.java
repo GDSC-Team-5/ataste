@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Validated
-@CrossOrigin(origins = "taste.suitestudy.com:8082",allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
 @RequestMapping("/restaurants")
 public class RestaurantController {
     private final RestaurantService restaurantService;
