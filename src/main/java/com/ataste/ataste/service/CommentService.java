@@ -51,9 +51,6 @@ public class CommentService {
         comment.setLikely(0L);
 
         comment.getCreDate();
-
-
-
         comment.setRestaurant(restaurant);
         comment.setTitle(commentDto.getTitle());
         comment.setContent(commentDto.getContent());
@@ -175,8 +172,6 @@ public class CommentService {
         return bestComment.getId();
     }
 
-
-
     // findBestComment의 이미지 가지고 와서 레스토랑 image로 사용하기
     public String getBestCommentImage(Long bestCommentId) {
 
@@ -202,6 +197,4 @@ public class CommentService {
     public List<CommentImage> getCommentImages(Long commentId) {
         return commentImageRepository.findByCommentId(commentId);
     }
-
-
 }

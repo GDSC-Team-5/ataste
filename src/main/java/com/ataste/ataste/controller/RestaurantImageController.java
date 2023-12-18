@@ -1,21 +1,21 @@
 package com.ataste.ataste.controller;
 
-import com.ataste.ataste.service.CommentService;
+
 import com.ataste.ataste.service.CommentImageService;
+import com.ataste.ataste.service.CommentService;
 import com.ataste.ataste.service.RestaurantImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
 
 @RestController
-@Validated
 @RequestMapping("/restaurants")
 @CrossOrigin(origins = "http://104.198.104.70:8082",allowedHeaders = "*")
 public class RestaurantImageController {
+
     private final RestaurantImageService restaurantImageService;
     private final CommentImageService commentImageService;
 
