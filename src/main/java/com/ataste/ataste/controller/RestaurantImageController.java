@@ -13,7 +13,11 @@ import javax.persistence.EntityNotFoundException;
 
 @RestController
 @RequestMapping("/restaurants")
+<<<<<<< HEAD
 @CrossOrigin(origins = "http://localhost:8081",allowedHeaders = "*")
+=======
+@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
+>>>>>>> 790ba187b7f3b91e1ad2a36ed5f090896b456920
 public class RestaurantImageController {
 
     private final RestaurantImageService restaurantImageService;

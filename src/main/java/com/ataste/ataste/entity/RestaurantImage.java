@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class RestaurantImage {
     // 1. 레스토랑 사진이 없을 경우
     // => 후기 X => default 사진
