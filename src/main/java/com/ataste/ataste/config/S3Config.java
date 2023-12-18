@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class S3Config {
+
     // application.yml에 이미 access와 secret 값 저장해놨으니 이렇게 코드 작성
     @Value("${cloud.aws.credentials.access-key}")
     private String accessKey;
@@ -28,3 +29,4 @@ public class S3Config {
                 .build();
     }
 }
+

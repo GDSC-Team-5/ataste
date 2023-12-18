@@ -1,6 +1,6 @@
 # key? 32byte (256bit)
 server:
-  port: 8082
+  port: 8081
 
 jwt:
   secretKey: 12345678901234567890123456789012
@@ -13,9 +13,9 @@ kakao:
 
 spring:
   datasource:
-    url: jdbc:mysql://taste.suitestudy.com:3306/ataste?useUnicode=true&serverTimezone=Asia/Seoul
-    username: mango
-    password: my-secret-pw
+    url: jdbc:mysql://127.0.0.1:3306/MangoBack?useUnicode=true&serverTimezone=Asia/Seoul
+    username: tiger
+    password: 1234
   jpa:
     hibernate:
       ddl-auto: update

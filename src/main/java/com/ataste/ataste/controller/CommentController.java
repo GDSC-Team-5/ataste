@@ -1,5 +1,6 @@
 package com.ataste.ataste.controller;
 
+
 import com.ataste.ataste.dto.CommentDto;
 import com.ataste.ataste.entity.Comment;
 import com.ataste.ataste.repository.CommentRepository;
@@ -9,11 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.persistence.EntityNotFoundException;
 
-@CrossOrigin(origins = "http://104.198.104.70:8082",allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:8081",allowedHeaders = "*")
 @RestController
-@RequestMapping("/restaurants")
+@RequestMapping("/restaurants") //  몇번째 쓰여진 comment인지도 알아야하니 마지막에 {comment_id} => 레스토랑 페이지가 생성되고 변경
 public class CommentController {
 
     @Autowired
@@ -70,4 +72,6 @@ public class CommentController {
             return new ResponseEntity<>("후기를 찾을 수 없습니다.", HttpStatus.NOT_FOUND);
         }
     }
+
+
 }

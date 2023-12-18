@@ -1,21 +1,22 @@
 package com.ataste.ataste.controller;
+
+
 import com.ataste.ataste.dto.CommentImageDto;
 import com.ataste.ataste.service.CommentImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 import java.util.List;
 
-
 @RestController
-@Validated
+@CrossOrigin(origins = "http://localhost:8081",allowedHeaders = "*")
 @RequestMapping("/restaurants/image")
-@CrossOrigin(origins = "http://104.198.104.70:8082",allowedHeaders = "*")
 public class CommentImageController {
+
     @Autowired
     private CommentImageService commentImageService;
 
@@ -55,5 +56,4 @@ public class CommentImageController {
 
         return new ResponseEntity<>("이미지가 삭제되었습니다.", HttpStatus.OK);
     }
-
 }

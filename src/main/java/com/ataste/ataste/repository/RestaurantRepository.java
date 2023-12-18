@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
 public interface RestaurantRepository extends JpaRepository<Restaurants, Long> {
     Optional<Restaurants> findById(Long id);
 
