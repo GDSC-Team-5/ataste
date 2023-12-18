@@ -13,7 +13,7 @@ import javax.persistence.EntityNotFoundException;
 
 @RestController
 @RequestMapping("/restaurants")
-@CrossOrigin(origins = "http://104.198.104.70:8082",allowedHeaders = "*")
+@CrossOrigin(origins = "taste.suitestudy.com:8082",allowedHeaders = "*")
 public class RestaurantImageController {
 
     private final RestaurantImageService restaurantImageService;
