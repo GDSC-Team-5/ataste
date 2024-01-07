@@ -28,5 +28,3 @@ public class RestaurantController {
         return ResponseEntity.ok(restaurant);
     }
 }
-
-
