@@ -1,5 +1,6 @@
 package com.ataste.ataste.service;
 
+
 import com.ataste.ataste.entity.Restaurants;
 import com.ataste.ataste.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import java.util.Optional;
 
 @Service
 public class RestaurantService {
-
     private final RestaurantRepository restaurantRepository;
 
     @Autowired
@@ -29,6 +29,4 @@ public class RestaurantService {
         restaurant.setUid(uid);
         return restaurantRepository.save(restaurant);
     }
-
-
 }

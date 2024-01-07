@@ -8,11 +8,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
 @RestController
 @Validated
-@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
 @RequestMapping("/restaurants")
 public class RestaurantController {
+
     private final RestaurantService restaurantService;
 
     @Autowired
@@ -27,3 +28,5 @@ public class RestaurantController {
         return ResponseEntity.ok(restaurant);
     }
 }
+
+

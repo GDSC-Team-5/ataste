@@ -17,8 +17,9 @@ spring:
     username: mango
     password: my-secret-pw
   jpa:
+    open-in-view: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         show_sql: true
@@ -34,12 +35,13 @@ spring:
     include: aws
 
 
-
 # multipart 설정
 spring.servlet.multipart.max-file-size: 10MB
 spring.servlet.multipart.max-request-size: 10MB
 
 logging: # S3 에러 발생한거 지우기 위해
+  file:
+    name: app.log
   level:
     com:
       amazonaws:
